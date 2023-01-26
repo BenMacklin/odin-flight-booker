@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  departing_airport_id: 1
+  arrival_airport_id: 1
+  duration: 1
+  scheduled_for: 2023-01-25 14:24:51
+
+two:
+  departing_airport_id: 1
+  arrival_airport_id: 1
+  duration: 1
+  scheduled_for: 2023-01-25 14:24:51
