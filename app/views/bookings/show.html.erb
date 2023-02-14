@@ -1,0 +1,14 @@
+<% if @flights.present? %>
+  <% @flights.each do |flight| %>
+    Booking for flight from <%= flight.from_airport.code %> to <%= flight.to_airport.code %>
+    Departure: <%= flight.scheduled_for %>
+  <% end %>
+<% end %>
+
+
+<% @booking.passangers.each_with_index do |passenger, i| %>
+       <%= "Passenger #{i + 1}" %></div>
+       <%= "Name: #{passenger.name}" %></div>
+       <%= "Email: #{passenger.email}" %></div>
+     </div>
+   <% end %>

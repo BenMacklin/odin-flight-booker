@@ -1,0 +1,14 @@
+<% if @flights.present? %>
+<%= form_with model: @booking, url: new_booking_path, method: :get do |f| %>
+<%= hidden_field_tag :pax, params[:pax] %>
+  <% @flights.each do |flight| %>
+    <%= f.radio_button :flight_id, flight.id, class: "form-check-input", required: true %>
+    <%= flight.from_airport.code %> to <%= flight.to_airport.code %>
+    Departure: <%= flight.scheduled_for %>
+    <br>
+  <% end %>
+    <%= f.submit "Book flight", class: "btn btn-primary booking-btn ml-1 mb-5" %>
+  <% end %>
+<% else %>
+  No flights found for the specified criteria.
+<% end %>

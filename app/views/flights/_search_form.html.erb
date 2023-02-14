@@ -1,0 +1,16 @@
+<%= form_with url: flights_path, method: :get do |form| %>
+
+  <%= form.label :departure, "Departing Airport" %>
+  <%= select_tag(:from_airport, options_for_select(@airport_options))%>
+
+  <%= form.label :arrival, "Arrivial Airport" %>
+  <%= select_tag(:to_airport, options_for_select(@airport_options)) %>
+
+  <%= select_tag(:pax, options_for_select(1..4, selected: params[:pax]), { prompt: 'Passengers' }) %>
+
+  <%= form.label :flight_date, "Flight Date" %>
+  <%= form.datetime_field :scheduled_for, value: params[:scheduled_for]%>
+
+  <%= form.submit 'Search', class: 'button' %>
+
+<% end %>
